@@ -14,6 +14,6 @@ public class SpringInitializedEvent {
 
     @Activate
     public void init() {
-        System.out.println("Liferay ModulLifecycle" +ModuleServiceLifecycle.SPRING_INITIALIZED);
+        System.out.println("Liferay ModulLifecycle : " +ModuleServiceLifecycle.SPRING_INITIALIZED);
     }
 }
