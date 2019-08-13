@@ -1,0 +1,1 @@
+mvn  --file ./lifecycle-actions/pom.xml clean package && mv ./*/target/*.jar deploy/ && docker-compose up
