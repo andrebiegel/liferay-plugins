@@ -1,0 +1,4 @@
+Bundle-Name: lifecycleactions
+Bundle-SymbolicName: io.github.andrebiegel.lifecycleactions
+Bundle-Version: 1.0-SNAPSHOT
+-metatype: *
