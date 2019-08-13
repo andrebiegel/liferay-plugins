@@ -1,1 +1,1 @@
-mvn  --file ./lifecycle-actions/pom.xml clean package && mv ./*/target/*.jar deploy/ && docker-compose up
+mvn  --file ./jax-rs-service/pom.xml clean package && mvn  --file ./lifecycle-actions/pom.xml clean package && mv ./*/target/*.jar deploy/ && docker-compose up
