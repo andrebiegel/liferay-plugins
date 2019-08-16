@@ -14,6 +14,6 @@ public class SystemCheckEvent {
 
     @Activate
     public void init() {
-        System.out.println("Liferay ModulLifecycle" +ModuleServiceLifecycle.SYSTEM_CHECK);
+        System.out.println("Liferay ModulLifecycle : " +ModuleServiceLifecycle.SYSTEM_CHECK);
     }
 }
