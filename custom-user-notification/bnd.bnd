@@ -1,0 +1,4 @@
+Bundle-Name: io.github.andrebiegel.liferay.plugins.user.notification
+Bundle-SymbolicName: io.github.andrebiegel.liferay.plugins.user.notification
+Bundle-Version: 1.0-SNAPSHOT
+-metatype: *
