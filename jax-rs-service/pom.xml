@@ -9,13 +9,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-			<dependency>
-					<groupId>org.osgi</groupId>
-					<artifactId>osgi.promise</artifactId>
-					<version>7.0.0</version>
-					<scope>provided</scope>
-				</dependency>
-				
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi.promise</artifactId>
+			<version>7.0.0</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
