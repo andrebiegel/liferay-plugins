@@ -1,0 +1,6 @@
+Bundle-Name: io.github.andrebiegel.liferay.plugins.include-resource
+Bundle-SymbolicName: io.github.andrebiegel.liferay.plugins.include-resource
+Bundle-Version: 1.0-SNAPSHOT
+-metatype: *
+Include-Resource:  target/dependencies/tyrus-standalone-client-jdk-1.12.jar 
+Bundle-ClassPath: ., tyrus-standalone-client-jdk-1.12.jar
