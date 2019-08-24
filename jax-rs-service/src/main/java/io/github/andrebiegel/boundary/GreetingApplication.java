@@ -1,7 +1,6 @@
 package io.github.andrebiegel.boundary;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.ws.rs.DefaultValue;
@@ -19,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ServiceScope;
 import org.osgi.service.jaxrs.client.PromiseRxInvoker;
 import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
 import org.osgi.util.promise.Promise;
