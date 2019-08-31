@@ -1,4 +1,3 @@
-
 package io.github.andrebiegel.boundary;
 
 import com.liferay.portal.kernel.events.ActionException;
