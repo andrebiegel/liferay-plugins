@@ -1,0 +1,3 @@
+Bundle-Name: io.github.andrebiegel.liferay.plugins.message.bus
+Bundle-SymbolicName: io.github.andrebiegel.liferay.plugins.message.bus
+Bundle-Version: 1.0-SNAPSHOT

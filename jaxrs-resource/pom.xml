@@ -3,12 +3,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>io.github.andreiegel</groupId>
-	<artifactId>jax-rs-resource</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<artifactId>io.github.andrebiegel.liferay.plugins.jaxrs</artifactId>
+	<parent>
+		<groupId>io.github.andrebiegel.liferay.plugins</groupId>
+		<artifactId>io.github.andrebiegel.liferay.plugins.parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../</relativePath>
+	</parent>
 	<dependencies>
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
@@ -22,7 +23,6 @@
 			<version>7.0.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
@@ -44,15 +44,6 @@
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -86,32 +77,6 @@
 						<version>3.1.0</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<!--Quality Checking -->
-			<plugin>
-				<groupId>com.github.spotbugs</groupId>
-				<artifactId>spotbugs-maven-plugin</artifactId>
-				<version>3.1.11</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>check</goal>
-						</goals>
-						<phase>compile</phase>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.owasp</groupId>
-				<artifactId>dependency-check-maven</artifactId>
-				<version>5.0.0-M2</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

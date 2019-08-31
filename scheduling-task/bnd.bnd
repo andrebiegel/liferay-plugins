@@ -1,0 +1,3 @@
+Bundle-Name: io.github.andrebiegel.liferay.plugins.scheduling.task
+Bundle-SymbolicName: io.github.andrebiegel.liferay.plugins.scheduling.task
+Bundle-Version: 1.0-SNAPSHOT

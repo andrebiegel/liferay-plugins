@@ -1,4 +1,4 @@
-Bundle-Name: lifecycleactions
-Bundle-SymbolicName: io.github.andrebiegel.lifecycleactions
+Bundle-Name: io.github.andrebiegel.liferay.plugins.lifecycle.actions
+Bundle-SymbolicName: io.github.andrebiegel.liferay.plugins.lifecycle.actions
 Bundle-Version: 1.0-SNAPSHOT
 -metatype: *
