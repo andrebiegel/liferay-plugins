@@ -1,5 +1,5 @@
 
-package io.github.andrebiegel.boundary;
+package io.github.andrebiegel.boundary.actions;
 
 import com.liferay.portal.kernel.events.ActionException;
 import com.liferay.portal.kernel.events.LifecycleAction;
@@ -7,10 +7,10 @@ import com.liferay.portal.kernel.events.LifecycleEvent;
 
 import org.osgi.service.component.annotations.Component;
 
-@Component(service = LifecycleAction.class, immediate = true, property = { "key=layout.configuration.action.update" })
-public class LayoutConfigurationUpdateAction implements LifecycleAction, EnumerationStreamSupport {
+@Component(service = LifecycleAction.class, immediate = true, property = { "key=servlet.session.destroy.events" })
+public class ServletSessionDestroyAction implements LifecycleAction, EnumerationStreamSupport {
 
-    private static final String LIFECYCLE_ACtION_TYPE = "layout.configuration.action.update";
+    private static final String LIFECYCLE_ACtION_TYPE = "servlet.session.destroy.events";
 
     @Override
     public void processLifecycleEvent(LifecycleEvent lifecycleEvent) throws ActionException {

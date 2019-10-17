@@ -1,5 +1,5 @@
 
-package io.github.andrebiegel.boundary;
+package io.github.andrebiegel.boundary.actions;
 
 import com.liferay.portal.kernel.events.ActionException;
 import com.liferay.portal.kernel.events.LifecycleAction;
@@ -7,10 +7,10 @@ import com.liferay.portal.kernel.events.LifecycleEvent;
 
 import org.osgi.service.component.annotations.Component;
 
-@Component(service = LifecycleAction.class, immediate = true, property = { "key=global.startup.events" })
-public class GlobalStartupAction implements LifecycleAction, EnumerationStreamSupport {
+@Component(service = LifecycleAction.class, immediate = true, property = { "key=logout.events.post" })
+public class LogoutPostAction implements LifecycleAction, EnumerationStreamSupport {
 
-    private static final String LIFECYCLE_ACtION_TYPE = "global.startup.events";
+    private static final String LIFECYCLE_ACtION_TYPE = "logout.events.post";
 
     @Override
     public void processLifecycleEvent(LifecycleEvent lifecycleEvent) throws ActionException {

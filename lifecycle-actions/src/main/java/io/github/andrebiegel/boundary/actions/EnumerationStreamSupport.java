@@ -1,4 +1,4 @@
-package io.github.andrebiegel.boundary;
+package io.github.andrebiegel.boundary.actions;
 
 import java.util.Arrays;
 import java.util.Enumeration;
