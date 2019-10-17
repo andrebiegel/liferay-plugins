@@ -23,6 +23,7 @@
 		<module>message-bus</module>
 		<module>osgi-include-resource</module>
 		<module>custom-user-notification</module>
+		<module>model-listener</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
