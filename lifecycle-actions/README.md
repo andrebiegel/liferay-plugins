@@ -1,7 +1,31 @@
-# Liferay Modul Lifecycle Events
+
+#  Liferay Lifecycle Extension Points
+A Collections of Lifecycle extensions provided by Liferay and found by myself.
+
+## Liferay Lifecycle Listener
+
+The following dependencies offer Listener  extensions points
+'''xml
+		<dependency>
+			<groupId>com.liferay</groupId>
+			<artifactId>com.liferay.portal.instance.lifecycle.api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+'''
+
+* com.liferay.portal.instance.lifecycle.PortalInstanceLifecycleListener : When new Companies are available or are going to be deleted
+
+
+## Liferay Modul Lifecycle Events
 Liferay also has a Modul Lifecycle, which can be used. 
 
-# Liferay Lifecycle Actions
+* module.service.lifecycle=database.initialized
+* module.service.lifecycle=portal.initialized
+* module.service.lifecycle=portlets.initialized
+* module.service.lifecycle=spring.initialized
+* module.service.lifecycle=system.check
+
+## Liferay Lifecycle Actions
 
 This example demonstrates the actions and their accessible Objects
 
