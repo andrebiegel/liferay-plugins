@@ -3,15 +3,16 @@
 A Collections of Lifecycle extensions provided by Liferay and found by myself.
 
 ## Liferay Lifecycle Listener
-
 The following dependencies offer Listener  extensions points
-'''xml
-		<dependency>
-			<groupId>com.liferay</groupId>
-			<artifactId>com.liferay.portal.instance.lifecycle.api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-'''
+
+
+```
+<dependency>
+	<groupId>com.liferay</groupId>
+	<artifactId>com.liferay.portal.instance.lifecycle.api</artifactId>
+	<scope>provided</scope>
+</dependency>
+```
 
 * com.liferay.portal.instance.lifecycle.PortalInstanceLifecycleListener : When new Companies are available or are going to be deleted
 
