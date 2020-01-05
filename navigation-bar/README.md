@@ -7,7 +7,7 @@
  * Liferay MVC Declarative Services Portlet
  * Liferay Logging Integration
 
-![navigation bar sample](images/ui.PNG "navigation bar sample")
+![navigation bar sample](images/ui.png "navigation bar sample")
 
 ## Sources 
 
