@@ -1,3 +1,3 @@
 # Liferay Plugin samples
 
-This is branch is targeting DXP 7.2. 
+This branch is targeting DXP 7.4 2026 Q1 
