@@ -20,10 +20,8 @@ The following dependencies offer Listener  extensions points
 ## Liferay Modul Lifecycle Events
 Liferay also has a Modul Lifecycle, which can be used. 
 
-* module.service.lifecycle=database.initialized
 * module.service.lifecycle=portal.initialized
 * module.service.lifecycle=portlets.initialized
-* module.service.lifecycle=spring.initialized
 * module.service.lifecycle=system.check
 
 ## Liferay Lifecycle Actions

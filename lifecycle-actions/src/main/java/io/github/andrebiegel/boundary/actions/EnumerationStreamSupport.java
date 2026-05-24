@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 public interface EnumerationStreamSupport {
 
-    public default <T> Stream<T> enumerationAsStream(Enumeration<T> e) {
+    default <T> Stream<T> enumerationAsStream(Enumeration<T> e) {
         return StreamSupport.stream(Spliterators.spliteratorUnknownSize(new Iterator<T>() {
             public T next() {
                 return e.nextElement();
@@ -28,7 +28,7 @@ public interface EnumerationStreamSupport {
     }
 
 
-    public default  void printElementsNonNull(HttpServletRequest container, String containerName, String lifecycleActionType) {
+    default  void printElementsNonNull(HttpServletRequest container, String containerName, String lifecycleActionType) {
         if (Objects.nonNull(container)) {
             System.out.println(printElements(container.getAttributeNames(), containerName, lifecycleActionType));
         } else {

@@ -6,14 +6,14 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 @Component(immediate = true)
-public class SystemCheckEvent {
+public class LicenseInstallEvent {
 
     // Liferay lifecycle service
-    @Reference(target = ModuleServiceLifecycle.SYSTEM_CHECK)
+    @Reference(target = ModuleServiceLifecycle.LICENSE_INSTALL)
     private ModuleServiceLifecycle _portalInitialized;
 
     @Activate
     public void init() {
-        System.out.println("Liferay ModulLifecycle : " +ModuleServiceLifecycle.SYSTEM_CHECK);
+        System.out.println("Liferay ModulLifecycle : " + ModuleServiceLifecycle.LICENSE_INSTALL);
     }
 }
