@@ -35,7 +35,7 @@ public class CustomUserNotificationTrigger {
 	@Reference
 	private UserLocalService userService;
 
-	// festching the
+	// fetching the
 	@Reference
 	private CompanyLocalService companyService;
 
@@ -51,7 +51,7 @@ public class CustomUserNotificationTrigger {
 		try {
 			String type = CustomUserNotificationHandler.PORLET_ID;
 			long timestamp = new Date().getTime();
-			Company company = companyService.getCompanyByMx(PropsUtil.get(PropsKeys.COMPANY_DEFAULT_WEB_ID));
+			Company company = companyService.getCompanyByWebId(PropsUtil.get(PropsKeys.COMPANY_DEFAULT_WEB_ID));
 			User testUser = userService.getUserByScreenName(company.getCompanyId(), "test");
 
 			long deliverBy = testUser.getUserId(), userId = testUser.getUserId();
