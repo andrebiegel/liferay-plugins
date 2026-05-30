@@ -14,12 +14,12 @@ public class CustomListener extends BaseModelListener<AssetCategory> {
     private static final Log log = LogFactoryUtil.getLog(CustomListener.class);
 
     @Override
-    public void onAfterUpdate(AssetCategory model) throws ModelListenerException {
+    public void onAfterUpdate(AssetCategory originalModel,AssetCategory model ) throws ModelListenerException {
         log.debug("here i am ");
         /**
          * Access AssetCategory do things needed
-         * 
-         * 
+         *
+         *
          */
     }
 
