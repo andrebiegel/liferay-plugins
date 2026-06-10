@@ -3,9 +3,9 @@ package io.github.andrebiegel.display.context;
 import java.util.List;
 import java.util.Optional;
 
-import javax.portlet.RenderResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.jsp.PageContext;
+import jakarta.portlet.RenderResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.jsp.PageContext;
 
 import com.liferay.frontend.taglib.clay.servlet.taglib.util.JSPNavigationItemList;
 import com.liferay.portal.kernel.log.Log;

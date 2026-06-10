@@ -22,19 +22,20 @@ import org.osgi.service.component.annotations.Reference;
 	service = PanelApp.class
 )
 public class CustomAppPanelApp extends BasePanelApp {
-
+	
+	@Override
+	public Portlet getPortlet() {
+		return portlet;
+	}
+	
 	@Override
 	public String getPortletId() {
 		return NavigationBarKeys.NAVIGATIONBAR;
 	}
-
-	@Override
+	
 	@Reference(
-		target = "(javax.portlet.name=" + NavigationBarKeys.NAVIGATIONBAR + ")",
-		unbind = "-"
+		target = "(jakarta.portlet.name=" + NavigationBarKeys.NAVIGATIONBAR + ")"
 	)
-	public void setPortlet(final Portlet portlet) {
-		super.setPortlet(portlet);
-	}
+	private Portlet portlet;
 
 }

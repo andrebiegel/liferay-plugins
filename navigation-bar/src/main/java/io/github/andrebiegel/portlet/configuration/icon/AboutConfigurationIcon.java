@@ -3,8 +3,8 @@ package io.github.andrebiegel.portlet.configuration.icon;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import javax.portlet.PortletRequest;
-import javax.portlet.PortletResponse;
+import jakarta.portlet.PortletRequest;
+import jakarta.portlet.PortletResponse;
 
 import com.liferay.petra.string.StringPool;
 import com.liferay.portal.kernel.language.LanguageUtil;
@@ -24,7 +24,7 @@ import io.github.andrebiegel.constants.NavigationBarKeys;
 
 @Component(
 	immediate = true,
-	property = "javax.portlet.name=" + NavigationBarKeys.NAVIGATIONBAR,
+	property = "jakarta.portlet.name=" + NavigationBarKeys.NAVIGATIONBAR,
 	service = PortletConfigurationIcon.class
 )
 public class AboutConfigurationIcon

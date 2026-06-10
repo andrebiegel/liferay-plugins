@@ -1,7 +1,7 @@
 package io.github.andrebiegel.display.navigation;
 
-import javax.portlet.RenderResponse;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.portlet.RenderResponse;
+import jakarta.servlet.http.HttpServletRequest;
 
 import com.liferay.frontend.taglib.clay.servlet.taglib.util.NavigationItem;
 import com.liferay.petra.function.UnsafeConsumer;

@@ -1,8 +1,8 @@
 package io.github.andrebiegel.portlet.action;
 
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
+import jakarta.portlet.PortletException;
+import jakarta.portlet.RenderRequest;
+import jakarta.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -17,7 +17,7 @@ import io.github.andrebiegel.display.context.NavigationBarDisplayContextFactory;
 @Component(
 	immediate = true,
 	property = {
-		"javax.portlet.name=" + NavigationBarKeys.NAVIGATIONBAR, "mvc.command.name=/",
+		"jakarta.portlet.name=" + NavigationBarKeys.NAVIGATIONBAR, "mvc.command.name=/",
 		"mvc.command.name=view"
 	},
 	service = MVCRenderCommand.class
