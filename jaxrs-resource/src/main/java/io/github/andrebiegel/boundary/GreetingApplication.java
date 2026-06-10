@@ -1,26 +1,25 @@
 package io.github.andrebiegel.boundary;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.container.AsyncResponse;
-import javax.ws.rs.container.Suspended;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.DefaultValue;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.container.AsyncResponse;
+import jakarta.ws.rs.container.Suspended;
+import jakarta.ws.rs.core.Application;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.jaxrs.client.PromiseRxInvoker;
-import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
+
+import org.osgi.service.jakartars.client.PromiseRxInvoker;
 import org.osgi.util.promise.Promise;
 
 import io.github.andrebiegel.entity.Drink;
@@ -28,8 +27,10 @@ import io.github.andrebiegel.entity.Drink;
 /**
  * @author André Biegel
  */
-@Component(property = { JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/greetings",
-		JaxrsWhiteboardConstants.JAX_RS_NAME + "=Greetings.Rest", "liferay.oauth2=false" // deactivating oauth for demo
+@Component(property = {
+		"osgi.jaxrs.application.base=/greetings",
+		"osgi.jaxrs.name=Greetings.Rest",
+		"liferay.oauth2=false" // deactivating oauth for demo
 }, service = Application.class)
 public class GreetingApplication extends Application {
 
@@ -84,9 +85,9 @@ public class GreetingApplication extends Application {
 				.onFailure(t -> async.resume(Response.serverError()));
 		
 	}
-	@GET
-	@Path("/drinks/{name}")
-	@Produces(MediaType.APPLICATION_JSON)
+	//@GET
+	//@Path("/drinks/{name}")
+	//@Produces(MediaType.APPLICATION_JSON)
 	public Drink deliver(
 		@PathParam("name") @DefaultValue("water") String name) {
 		return new Drink(name);
