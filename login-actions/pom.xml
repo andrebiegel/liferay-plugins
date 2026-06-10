@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>io.github.andrebiegel.liferay.plugins.login.actions</artifactId>
@@ -38,7 +38,7 @@
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-maven-plugin</artifactId>
-				<version>3.5.0</version>
+				<version>${biz.aQute.bndlib.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -50,12 +50,12 @@
 					<dependency>
 						<groupId>biz.aQute.bnd</groupId>
 						<artifactId>biz.aQute.bndlib</artifactId>
-						<version>3.5.0</version>
+						<version>${biz.aQute.bndlib.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>com.liferay</groupId>
 						<artifactId>com.liferay.ant.bnd</artifactId>
-						<version>3.0.7</version>
+						<version>${com.liferay.ant.bnd.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>

@@ -10,7 +10,11 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.release>21</maven.compiler.release>	</properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <biz.aQute.bndlib.version>7.2.3</biz.aQute.bndlib.version>
+        <com.liferay.ant.bnd.version>3.2.16</com.liferay.ant.bnd.version>
+    </properties>
+
 	<modules>
 		<module>background-task</module>
 		<module>scheduling-task</module>
@@ -50,7 +54,6 @@
 				<version>3.6.0</version>
 				<configuration>
 					<configLocation>google_checks.xml</configLocation>
-					<encoding>UTF-8</encoding>
 					<consoleOutput>true</consoleOutput>
 					<failsOnError>true</failsOnError>
 					<linkXRef>false</linkXRef>
