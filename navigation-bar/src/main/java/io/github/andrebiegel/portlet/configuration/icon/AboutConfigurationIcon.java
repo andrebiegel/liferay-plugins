@@ -3,6 +3,8 @@ package io.github.andrebiegel.portlet.configuration.icon;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import jakarta.portlet.PortletRequest;
 import jakarta.portlet.PortletResponse;
 
@@ -30,6 +32,8 @@ import io.github.andrebiegel.constants.NavigationBarKeys;
 public class AboutConfigurationIcon
 	extends BasePortletConfigurationIcon {
 
+	private static final Log _logger = LogFactoryUtil.getLog(
+		AboutConfigurationIcon.class);
 	@Override
 	public String getMessage(PortletRequest portletRequest) {
 		return LanguageUtil.get(
@@ -64,6 +68,7 @@ public class AboutConfigurationIcon
 				themeDisplay.getRequest());
 		}
 		catch (Exception e) {
+			_logger.error(e);
 		}
 
 		return url;
