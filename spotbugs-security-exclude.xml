@@ -1,2 +1,27 @@
 <FindBugsFilter>
+    <Match>
+        <Class name="io.github.andrebiegel.boundary.DrinksResource"/>
+        <Bug pattern="JAXRS_ENDPOINT"/>
+    </Match>
+    <Match>
+        <Class name="io.github.andrebiegel.boundary.GreetingApplication"/>
+        <Bug pattern="JAXRS_ENDPOINT"/>
+    </Match>
+    <Match>
+        <Class name="io.github.andrebiegel.boundary.GreetingApplication"/>
+        <Bug pattern="JAXRS_ENDPOINT"/>
+    </Match>
+    <!-- activate and deactivate methods
+    -->
+    <Match>
+        <Class name="io.github.andrebiegel.mb.MyMessagingConfigurator"/>
+        <Bug pattern="UPM_UNCALLED_PRIVATE_METHOD"/>
+    </Match>
+
+    <Match>
+        <Class name="io.github.andrebiegel.application.list.CustomAppPanelApp"/>
+        <Bug pattern="EI_EXPOSE_REP"/>
+    </Match>
+
+
 </FindBugsFilter>
