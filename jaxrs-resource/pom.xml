@@ -24,9 +24,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>jakarta.ws.rs</groupId>
-			<artifactId>jakarta.ws.rs-api</artifactId>
-			<version>4.0.0</version>
+			<groupId>com.liferay</groupId>
+			<artifactId>jakarta.ws.rs</artifactId>
+			<version>3.1.0.LIFERAY-PATCHED-2</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>

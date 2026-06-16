@@ -24,7 +24,7 @@ import io.github.andrebiegel.entity.Drink;
 public class DrinksResource {
 
 	@GET
-	@Path("/drinks/{name}")
+	@Path("/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Drink deliver(
 		@PathParam("name") @DefaultValue("water") String name) {
