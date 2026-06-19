@@ -16,6 +16,7 @@ import com.liferay.portal.kernel.service.UserNotificationEventLocalService;
 import com.liferay.portal.kernel.util.PropsKeys;
 import com.liferay.portal.kernel.util.PropsUtil;
 
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
@@ -27,7 +28,7 @@ public class CustomUserNotificationTrigger {
 
 	public static final Log LOGGER = LogFactoryUtil.getLog(CustomUserNotificationTrigger.class);
 
-	// for Creating the notifyxcation itself
+	// for Creating the notification itself
 	@Reference
 	private UserNotificationEventLocalService notificationService;
 
@@ -35,7 +36,7 @@ public class CustomUserNotificationTrigger {
 	@Reference
 	private UserLocalService userService;
 
-	// fetching the
+	// fetching the company
 	@Reference
 	private CompanyLocalService companyService;
 
@@ -47,6 +48,7 @@ public class CustomUserNotificationTrigger {
     }
 
 
+	@Activate
 	public void notifyUser() {
 		try {
 			String type = CustomUserNotificationHandler.PORLET_ID;
