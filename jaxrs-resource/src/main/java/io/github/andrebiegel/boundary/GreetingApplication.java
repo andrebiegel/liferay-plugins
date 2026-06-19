@@ -76,23 +76,14 @@ public class GreetingApplication extends Application {
 
 	@GET
 	@Path("/remote-morning/{name}")
-	@Produces(MediaType.TEXT_PLAIN)
-	public void morningWitRemote(@PathParam("name") @DefaultValue("dummy") String name,
-			@QueryParam("drink") @DefaultValue("water") String drink, @Suspended AsyncResponse async) {
+	@Produces(MediaType.APPLICATION_JSON)
+	public void morningWitRemote(@PathParam("name") @DefaultValue("dummy") String name, @Suspended AsyncResponse async) {
 
 		CompletableFuture<Drink> future = remote.target(REST_SERVICE_URL).path("/o/greetings").path("/drinks").path("/{name}")
 				.resolveTemplate("name", name).request().rx().get(Drink.class).toCompletableFuture();
 		
-		future.thenAcceptAsync(drinkItem-> async.resume("Good Morning " + name + ". Would you like some " + drinkItem.name + "?")).exceptionallyAsync(
+		future.thenAcceptAsync(drinkItem-> async.resume(new ResponseDTO("Good Morning " + name + ". Would you like some " + drinkItem.name + "?"))).exceptionallyAsync(
 				t -> {async.resume(Response.serverError());
 				return null;});
 	}
-	//@GET
-	//@Path("/drinks/{name}")
-	//@Produces(MediaType.APPLICATION_JSON)
-	public Drink deliver(
-		@PathParam("name") @DefaultValue("water") String name) {
-		return new Drink(name);
-	}
-
 }
