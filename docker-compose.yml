@@ -12,6 +12,7 @@ services:
         - 8080:8080
       volumes:
         - ./deploy:/mnt/liferay/deploy
+        - ./log4j:/mnt/liferay/files/osgi/log4j
 
 
 
