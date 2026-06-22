@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
+import com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -36,7 +39,8 @@ public class GreetingApplication extends Application {
 
 	private Client remote;
 	private static final String REST_SERVICE_URL = "http://localhost:8080";
-
+	
+	private static final Log logger = LogFactoryUtil.getLog(GreetingApplication.class);
 	public Set<Object> getSingletons() {
 		return Collections.singleton(this);
 	}
@@ -44,6 +48,7 @@ public class GreetingApplication extends Application {
 	@Activate
 	public void init() {
 		this.remote = ClientBuilder.newClient();
+		remote.register(JacksonJsonProvider.class);
 	}
 
 	@GET
@@ -76,14 +81,15 @@ public class GreetingApplication extends Application {
 
 	@GET
 	@Path("/remote-morning/{name}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
 	public void morningWitRemote(@PathParam("name") @DefaultValue("dummy") String name, @Suspended AsyncResponse async) {
 
 		CompletableFuture<Drink> future = remote.target(REST_SERVICE_URL).path("/o/greetings").path("/drinks").path("/{name}")
 				.resolveTemplate("name", name).request().rx().get(Drink.class).toCompletableFuture();
 		
-		future.thenAcceptAsync(drinkItem-> async.resume(new ResponseDTO("Good Morning " + name + ". Would you like some " + drinkItem.name + "?"))).exceptionallyAsync(
-				t -> {async.resume(Response.serverError());
+		future.thenAcceptAsync(drinkItem-> async.resume("Good Morning " + name + ". Would you like some " + drinkItem.getName() + "?")).exceptionallyAsync(
+				t -> {logger.error(t.getMessage(),t);
+					async.resume(Response.status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),t.getMessage()).build());
 				return null;});
 	}
 }
